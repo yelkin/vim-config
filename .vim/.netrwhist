@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/etc/libvirt'
+let g:netrw_dirhist_2='/etc/libvirt/qemu'
+let g:netrw_dirhist_3='/etc/libvirt'
+let g:netrw_dirhist_4='/etc/libvirt/storage'
+let g:netrw_dirhist_5='/home/ideco/.vim'
+let g:netrw_dirhist_6='/home/ideco/.vim/.vim'
