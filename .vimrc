@@ -67,8 +67,8 @@ filetype plugin indent on
 so $VIMRUNTIME/macros/matchit.vim " Extend % functions by matching not only brackets
                                   " but the whole words, e.g. if/fi
 " Start NERDTree when plugins init is complete
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 
 let delimitMate_expand_cr = 1
 set backspace=indent,eol,start
