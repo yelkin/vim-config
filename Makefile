@@ -5,6 +5,7 @@ all: backup install
 
 install:
 	cp -r .vimrc .vim $(HOME)
+	vim +BundleInstall
 	@echo "New vim config installed successfully"
 backup:
 	tar -ca -C $(HOME) -f $(HOME)/$(BACKUP_ARCHIVE) $(BACKUP_FILE_LIST)
