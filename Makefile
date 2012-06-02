@@ -4,7 +4,12 @@ BACKUP_FILE_LIST=.vimrc .vim
 all: backup install
 
 install:
+	# Install Vundle
+	rm -rf $(HOME)/.vim
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	# Install my vim config and my vundle config
 	cp -r .vimrc .vim $(HOME)
+	# Install bundles
 	vim +BundleInstall
 	@echo "New vim config installed successfully"
 backup:
