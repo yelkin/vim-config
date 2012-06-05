@@ -13,5 +13,5 @@ install:
 	vim +BundleInstall
 	@echo "New vim config installed successfully"
 backup:
-	tar -ca -C $(HOME) -f $(HOME)/$(BACKUP_ARCHIVE) $(BACKUP_FILE_LIST)
+	tar --ignore-failed-read -ca -C $(HOME) -f $(HOME)/$(BACKUP_ARCHIVE) $(BACKUP_FILE_LIST)
 	@echo "Your current vim config was saved to $(BACKUP_ARCHIVE) in your home directory."
