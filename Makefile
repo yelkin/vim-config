@@ -5,7 +5,8 @@ all: backup install
 
 install:
 	# Install Vundle
-	rm -rf $(HOME)/.vim
+	#Don't delete user config
+	#rm -rf $(HOME)/.vim
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	# Install my vim config and my vundle config
 	cp -r .vimrc .vim $(HOME)
