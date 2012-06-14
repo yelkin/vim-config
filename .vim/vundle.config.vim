@@ -24,6 +24,9 @@ Bundle 'mikewest/vimroom'
 " NERDTree file browser for vim
 Bundle 'scrooloose/nerdtree'
 
+" NERDCommenter plugin for commenting blocks of code
+Bundle 'scrooloose/nerdcommenter'
+
 "Bundle 'cscope.vim'
 
 " Extend matching for '%' to words(if/fi), tags, etc
