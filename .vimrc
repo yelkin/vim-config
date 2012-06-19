@@ -35,6 +35,12 @@ set nofoldenable
 set splitright
 set splitbelow
 
+"Syntax highlighting
+syntax on
+
+" Set color scheme 
+colo blue
+
 " UI
 set number
 set foldcolumn=0
@@ -70,13 +76,15 @@ so $VIMRUNTIME/macros/matchit.vim " Extend % functions by matching not only brac
 "autocmd VimEnter * NERDTree
 "autocmd VimEnter * wincmd p
 
+
 let delimitMate_expand_cr = 1
 set backspace=indent,eol,start
 
-map <C-l> <C-w>l
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
+
+"map <C-l> <C-w>l
+"map <C-h> <C-w>h
+"map <C-j> <C-w>j
+"map <C-k> <C-w>k
 
 map <C-a> :%s/\s\+$//g<CR>
 
