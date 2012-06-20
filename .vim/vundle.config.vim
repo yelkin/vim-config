@@ -35,6 +35,9 @@ Bundle 'matchit.zip'
 " Browse tags in source file in a window
 Bundle 'taglist.vim'
 
+" Snippets plugin for vim
+Bundle 'snipMate'
+
 " See later
 " ---------
 " Bundle 'ervandew/supertab'
