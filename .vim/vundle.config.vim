@@ -38,6 +38,9 @@ Bundle 'taglist.vim'
 " Snippets plugin for vim
 Bundle 'snipMate'
 
+" Enclose selection in quotes or brackets
+Bundle 'tpope/vim-surround'
+
 " See later
 " ---------
 " Bundle 'ervandew/supertab'
