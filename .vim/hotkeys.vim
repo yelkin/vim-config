@@ -10,3 +10,6 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " Upload file to ics virtual machine
 map <F4> :!$HOME/.vim/scp-to-ics.sh "%:p"<CR>
+
+" Show all matches for the tag and choose one to open in new window
+map <F2> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
