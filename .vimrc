@@ -38,9 +38,6 @@ set splitbelow
 "Syntax highlighting
 syntax on
 
-" Set color scheme 
-colo blue
-
 " UI
 set number
 set foldcolumn=0
@@ -76,6 +73,9 @@ so $VIMRUNTIME/macros/matchit.vim " Extend % functions by matching not only brac
 "autocmd VimEnter * NERDTree
 "autocmd VimEnter * wincmd p
 
+" Set color scheme 
+set t_Co=256
+colo wombat
 
 let delimitMate_expand_cr = 1
 set backspace=indent,eol,start
