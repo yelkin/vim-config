@@ -41,10 +41,6 @@ Bundle 'snipMate'
 " Enclose selection in quotes or brackets
 Bundle 'tpope/vim-surround'
 
-" Wombat color scheme
-Bundle 'CSApprox'
-Bundle 'vim-scripts/Wombat'
-
 " See later
 " ---------
 " Bundle 'ervandew/supertab'
