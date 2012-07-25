@@ -38,7 +38,7 @@ set splitbelow
 "Syntax highlighting
 syntax on
 
-" Set color scheme 
+" Set color scheme
 colo blue
 
 " UI
@@ -63,6 +63,9 @@ so ~/.vim/hotkeys.vim
 set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,cp1251,koi8-r
+
+" Set text width to wrap text with 'gq'
+set textwidth=80
 
 "Load Vundle
 so ~/.vim/vundle.config.vim
