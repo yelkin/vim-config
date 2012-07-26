@@ -41,6 +41,9 @@ Bundle 'snipMate'
 " Enclose selection in quotes or brackets
 Bundle 'tpope/vim-surround'
 
+" Fugitive provides git integration for vim
+Bundle 'tpope/vim-fugitive'
+
 " See later
 " ---------
 " Bundle 'ervandew/supertab'

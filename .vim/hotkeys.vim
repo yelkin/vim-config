@@ -4,9 +4,13 @@ map <F8> :vertical wincmd f<CR>
 map <F3> :h <C-R><C-W><CR>
 " View man files in vim window
 so $VIMRUNTIME/ftplugin/man.vim
-nmap K :Man <cword><CR>
+" nmap K :Man <cword><CR>
+
 " Switch to buffer from the list
 nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" Switch to next tab
+nnoremap <F6> :tabn<CR>
 
 " Upload file to ics virtual machine
 map <F4> :!$HOME/.vim/scp-to-ics.sh "%:p"<CR>
