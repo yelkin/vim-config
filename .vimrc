@@ -44,7 +44,7 @@ set foldcolumn=0
 set showtabline=0
 
 set laststatus=2
-set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
+set statusline=%{fugitive#statusline()}\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 
 set scrolljump=7
 
