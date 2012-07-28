@@ -1,10 +1,11 @@
-"Open file under cursor in new tab
-map <F8> :vertical wincmd f<CR>
-"See vim help for word under cursor
-map <F3> :h <C-R><C-W><CR>
-" View man files in vim window
-so $VIMRUNTIME/ftplugin/man.vim
-" nmap K :Man <cword><CR>
+" Toggle file browser
+map <F2> :NERDTreeToggle<CR>
+
+" Toggle tag browser
+map <F3> :TlistToggle<CR>
+
+" Show all matches for the tag and choose one to open in new window
+nnoremap <F4> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " Switch to buffer from the list
 nnoremap <F5> :buffers<CR>:buffer<Space>
@@ -12,8 +13,6 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " Switch to next tab
 nnoremap <F6> :tabn<CR>
 
-" Upload file to ics virtual machine
-map <F4> :!$HOME/.vim/scp-to-ics.sh "%:p"<CR>
+"Open file under cursor in vertical split
+map <F8> :vertical wincmd f<CR>
 
-" Show all matches for the tag and choose one to open in new window
-map <F2> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
