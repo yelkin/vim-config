@@ -77,7 +77,9 @@ so $VIMRUNTIME/macros/matchit.vim " Extend % functions by matching not only brac
 "autocmd VimEnter * wincmd p
 
 " Set color scheme 
-colo torte
+set t_Co=256
+colo lucius
+LuciusDark
 
 let delimitMate_expand_cr = 1
 set backspace=indent,eol,start

@@ -44,6 +44,9 @@ Bundle 'tpope/vim-surround'
 " Fugitive provides git integration for vim
 Bundle 'tpope/vim-fugitive'
 
+" Install lucius color scheme
+Bundle 'vim-scripts/Lucius'
+
 " See later
 " ---------
 " Bundle 'ervandew/supertab'
