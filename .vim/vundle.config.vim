@@ -33,7 +33,8 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'matchit.zip'
 
 " Browse tags in source file in a window
-Bundle 'taglist.vim'
+"Bundle 'taglist.vim'
+Bundle 'vim-scripts/Tagbar'
 
 " Snippets plugin for vim
 Bundle 'snipMate'
@@ -46,6 +47,10 @@ Bundle 'tpope/vim-fugitive'
 
 " Install lucius color scheme
 Bundle 'vim-scripts/Lucius'
+
+" Fancy statusline plugin
+Bundle 'Lokaltog/vim-powerline'
+
 
 " See later
 " ---------

@@ -43,6 +43,7 @@ set number
 set foldcolumn=0
 set showtabline=0
 
+" Status line config
 set laststatus=2
 set statusline=%{fugitive#statusline()}\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 

@@ -2,7 +2,7 @@
 map <F2> :NERDTreeToggle<CR>
 
 " Toggle tag browser
-map <F3> :TlistToggle<CR>
+map <F3> :TagbarToggle<CR>
 
 " Show all matches for the tag and choose one to open in new window
 nnoremap <F4> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
