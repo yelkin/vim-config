@@ -73,9 +73,9 @@ filetype plugin indent on
 " Plugins init
 so $VIMRUNTIME/macros/matchit.vim " Extend % functions by matching not only brackets
                                   " but the whole words, e.g. if/fi
-" Start NERDTree when plugins init is complete
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * wincmd p
+
+" LustyExplorer settings
+set hidden
 
 " Set color scheme 
 set t_Co=256

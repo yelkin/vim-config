@@ -16,13 +16,11 @@ Bundle 'kien/ctrlp.vim'
 "   Homapage: https://github.com/docunext/closetag.vim
 Bundle 'docunext/closetag.vim'
 
-" Vim like WriteRoom
-"   Usage: :VimroomToggle
-"   Homepage: http://projects.mikewest.org/vimroom/
-Bundle 'mikewest/vimroom'
-
 " NERDTree file browser for vim
 Bundle 'scrooloose/nerdtree'
+
+" Filesystem/buffer explorer plugin
+Bundle 'vim-scripts/LustyExplorer'
 
 " NERDCommenter plugin for commenting blocks of code
 Bundle 'scrooloose/nerdcommenter'
