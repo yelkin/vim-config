@@ -23,9 +23,11 @@ set tabstop=4
 set expandtab
 set smarttab
 
+" Search parameters
 set ignorecase
 set incsearch
 set smartcase
+set hlsearch        " Highlight all search matches
 
 set autoindent
 set smartindent
@@ -39,7 +41,7 @@ set splitbelow
 syntax on
 
 " UI
-set number
+set relativenumber  " Make line numbers relative to current line
 set foldcolumn=0
 set showtabline=0
 
