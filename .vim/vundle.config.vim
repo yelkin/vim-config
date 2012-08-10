@@ -43,6 +43,9 @@ Bundle 'tpope/vim-surround'
 " Fugitive provides git integration for vim
 Bundle 'tpope/vim-fugitive'
 
+" Mappings for working with quickfix list
+Bundle 'tpope/vim-unimpaired'
+
 " Install lucius color scheme
 Bundle 'vim-scripts/Lucius'
 
