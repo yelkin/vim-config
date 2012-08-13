@@ -45,6 +45,9 @@ set relativenumber  " Make line numbers relative to current line
 set foldcolumn=0
 set showtabline=0
 
+" Mouse
+set mouse=n         " Allow mouse in normal mode (resize windows, scrolling).
+
 " Status line config
 set laststatus=2
 set statusline=%{fugitive#statusline()}\ %<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
