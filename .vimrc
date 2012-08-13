@@ -81,6 +81,9 @@ so $VIMRUNTIME/macros/matchit.vim " Extend % functions by matching not only brac
 
 " LustyExplorer settings
 set hidden
+let g:LustyExplorerSuppressRubyWarning = 1 " Don't complain if ruby is not supported
+                                           " Without Ruby lusty explorer will be
+                                           " disabled
 
 " Set color scheme 
 set t_Co=256
