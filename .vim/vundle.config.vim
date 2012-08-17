@@ -30,6 +30,9 @@ Bundle 'scrooloose/nerdcommenter'
 " Extend matching for '%' to words(if/fi), tags, etc
 Bundle 'matchit.zip'
 
+" Matchit for python
+Bundle 'voithos/vim-python-matchit'
+
 " Browse tags in source file in a window
 "Bundle 'taglist.vim'
 Bundle 'vim-scripts/Tagbar'

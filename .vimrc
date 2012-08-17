@@ -43,7 +43,7 @@ syntax on
 " UI
 set relativenumber  " Make line numbers relative to current line
 set foldcolumn=0
-set showtabline=0
+set showtabline=1
 
 " Mouse
 set mouse=n         " Allow mouse in normal mode (resize windows, scrolling).
@@ -68,7 +68,7 @@ set termencoding=utf-8
 set fileencodings=utf-8,cp1251,koi8-r
 
 " Set text width to wrap text with 'gq'
-set textwidth=80
+set textwidth=120
 
 "Load Vundle
 so ~/.vim/vundle.config.vim
