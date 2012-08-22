@@ -1,3 +1,6 @@
+" Change <leader> to ","
+let mapleader = ","
+
 " Toggle file browser
 map <F2> :NERDTreeToggle<CR>
 
@@ -16,3 +19,5 @@ nnoremap <F6> :tabn<CR>
 "Open file under cursor in vertical split
 map <F8> :vertical wincmd f<CR>
 
+" Shortcut to rapidly toggle `set list`
+nmap <leader>ll :set list!<CR>

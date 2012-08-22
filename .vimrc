@@ -1,8 +1,10 @@
 " File: .vimrc
-" Author: Oleg Mokhov (mokhov)
-" Thanks2: Georgiy Mostolovitsa (gfranco), Igor Spisivtsev (garris), Vyacheslav Oliyanchuk (miripiruni)
-" Last Modified: 31.01.2012
+" Author: Pavel Yelkin
 
+"Reload vimrc file after saving it
+"if has ("autocmd")
+"    autocmd bufwritepost ~/.vimrc source $MYVIMRC
+"endif
 
 " Common
 set nocompatible
@@ -22,6 +24,9 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set smarttab
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 
 " Search parameters
 set ignorecase
