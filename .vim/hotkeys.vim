@@ -1,6 +1,9 @@
 " Change <leader> to ","
 let mapleader = ","
 
+" Toggle vim undo tree browser
+map <F1> :GundoToggle<CR>
+
 " Toggle file browser
 map <F2> :NERDTreeToggle<CR>
 
@@ -21,3 +24,7 @@ map <F8> :vertical wincmd f<CR>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>ll :set list!<CR>
+
+" tComment settings
+" Bind comment command to <leader>c
+map <leader>c <c-_><c-_>

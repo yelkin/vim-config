@@ -4,6 +4,9 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Tiled window manager for vim
+"Bundle 'spolu/dwm.vim'
+
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
@@ -20,10 +23,13 @@ Bundle 'docunext/closetag.vim'
 Bundle 'scrooloose/nerdtree'
 
 " Filesystem/buffer explorer plugin
-Bundle 'vim-scripts/LustyExplorer'
+"Bundle 'vim-scripts/LustyExplorer'
 
 " NERDCommenter plugin for commenting blocks of code
-Bundle 'scrooloose/nerdcommenter'
+"Bundle 'scrooloose/nerdcommenter'
+
+" Better plugin for commenting
+Bundle 'vim-scripts/tComment'
 
 "Bundle 'cscope.vim'
 
@@ -55,6 +61,20 @@ Bundle 'vim-scripts/Lucius'
 " Fancy statusline plugin
 Bundle 'Lokaltog/vim-powerline'
 
+" Use letter shortcuts along with [count] in motions
+" Usage: <leader><leader>{motion}{letter}
+"       instead of [count]{motion}
+Bundle 'Lokaltog/vim-easymotion'
+
+" Syntastic is a syntax checking plugin that runs files through external syntax checkers and displays any resulting
+" errors to the user. 
+Bundle 'scrooloose/syntastic'
+
+" Use <c-w>o to zoom in and out of window
+Bundle 'vim-scripts/ZoomWin'
+
+" Gundo.vim is a plugin to visualize your Vim undo tree
+Bundle 'sjl/gundo.vim'
 
 " See later
 " ---------
