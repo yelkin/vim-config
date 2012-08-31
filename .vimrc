@@ -35,7 +35,7 @@ set smartcase
 set hlsearch        " Highlight all search matches
 
 set autoindent
-set smartindent
+set cindent
 
 set nofoldenable
 
@@ -85,10 +85,7 @@ so $VIMRUNTIME/macros/matchit.vim " Extend % functions by matching not only brac
                                   " but the whole words, e.g. if/fi
 
 " LustyExplorer settings
-set hidden
-let g:LustyExplorerSuppressRubyWarning = 1 " Don't complain if ruby is not supported
-                                           " Without Ruby lusty explorer will be
-                                           " disabled
+"set hidden
 
 " Set color scheme 
 set t_Co=256
