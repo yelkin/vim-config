@@ -1,6 +1,9 @@
 " Change <leader> to ","
 let mapleader = ","
 
+" Don't show help when <F1> is pressed in insert mode
+imap <F1> <nop>
+
 " Toggle vim undo tree browser
 map <F1> :GundoToggle<CR>
 
