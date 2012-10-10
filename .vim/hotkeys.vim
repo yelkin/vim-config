@@ -17,7 +17,7 @@ map <F3> :TagbarToggle<CR>
 nnoremap <F4> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " Switch to buffer from the list
-nnoremap <F5> :buffers<CR>:buffer<Space>
+" nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " Switch to next tab
 nnoremap <F6> :tabn<CR>
@@ -31,3 +31,17 @@ nmap <leader>ll :set list!<CR>
 " tComment settings
 " Bind comment command to <leader>c
 map <leader>c <c-_><c-_>
+
+" Binding for switch plugin
+nnoremap - :Switch<CR>
+
+" Save current session
+map <F5> :mksession! ~/.vim_session<CR>
+" Load saved session
+map <F7> :source ~/.vim_session<CR>
+
+" Mappings for common typos in commands:
+command Q q
+command W w
+command WQ wq
+command Wq wq
