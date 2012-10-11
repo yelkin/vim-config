@@ -1,11 +1,6 @@
 " File: .vimrc
 " Author: Pavel Yelkin
 
-"Reload vimrc file after saving it
-"if has ("autocmd")
-"    autocmd bufwritepost ~/.vimrc source $MYVIMRC
-"endif
-
 " Common
 set nocompatible
 set autoread
@@ -83,9 +78,6 @@ filetype plugin indent on
 " Plugins init
 so $VIMRUNTIME/macros/matchit.vim " Extend % functions by matching not only brackets
                                   " but the whole words, e.g. if/fi
-
-" LustyExplorer settings
-"set hidden
 
 " Set color scheme 
 set t_Co=256
