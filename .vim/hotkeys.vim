@@ -2,7 +2,10 @@
 " Disable annoying features
 " =========================
 " Disable help window
-imap <F1> <Nop>
+inoremap <F1> <Nop>
+nnoremap <F1> <Nop>
+vnoremap <F1> <Nop>
+
 " Disable Ex mode
 map Q <Nop>
 " Disable K looking stuff up
@@ -29,7 +32,9 @@ map <F5> :mksession! ~/.vim_session<CR>
 " Load saved session
 map <F7> :source ~/.vim_session<CR>
 
-
+" =========
+" Shortcuts
+" =========
 " Binding for switch plugin
 nnoremap - :Switch<CR>
 
@@ -46,15 +51,17 @@ nmap <leader>ll :set list!<CR>
 " tComment settings: Bind comment command to <leader>c
 map <leader>c <c-_><c-_>
 
-map <leader>co gg"+yG
+map <leader>co "+y
+map <leader>pa "+p
+map <leader>ca gg"+yG
 map <leader>rc :e ~/.vimrc<CR>
 map <leader>ho :e ~/.vim/hotkeys.vim<CR>
+map <leader>vu :e ~/.vim/vundle.config.vim<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>w <C-w>w
 map <leader>qq <esc>:q<cr>
+map <leader>le <esc>:let @/=""<cr>
+map <leader>vv <c-w>v<c-w>l
 
-" NOTE: You need to disable control flow characters in your terminal 
-" for this to work. Add the following to your bashrc:
-"       stty -ixon -ixoff
-map <c-s> <esc>:w<cr>
-imap <c-s> <esc>:w<cr>
+nnoremap <tab> %
+vnoremap <tab> %

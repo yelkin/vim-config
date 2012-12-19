@@ -22,9 +22,6 @@ Bundle 'docunext/closetag.vim'
 " NERDTree file browser for vim
 Bundle 'scrooloose/nerdtree'
 
-" Filesystem/buffer explorer plugin
-"Bundle 'vim-scripts/LustyExplorer'
-
 " NERDCommenter plugin for commenting blocks of code
 "Bundle 'scrooloose/nerdcommenter'
 
@@ -40,7 +37,10 @@ Bundle 'matchit.zip'
 Bundle 'voithos/vim-python-matchit'
 
 " Browse tags in source file in a window
-"Bundle 'taglist.vim'
+" Bundle 'taglist.vim'
+
+" Powerline significantly slows down vim when browsing large file
+" when this plugin is enabled.
 Bundle 'vim-scripts/Tagbar'
 
 " Snippets plugin for vim
@@ -76,13 +76,18 @@ Bundle 'vim-scripts/ZoomWin'
 " Gundo.vim is a plugin to visualize your Vim undo tree
 Bundle 'sjl/gundo.vim'
 
-" See later
-" ---------
-" Bundle 'ervandew/supertab'
-" Bundle 'int3/vim-taglist-plus'
-" Bundle 'majutsushi/tagbar'    " - works
-" http://sjl.bitbucket.org/gundo.vim/#installation
+" Switch plugin: switch between True/False etc.
+Bundle 'AndrewRadev/switch.vim'
 
-" Sources:
-"   http://mirnazim.org/writings/vim-plugins-i-use/
+" Write html code faster.
+Bundle 'sophacles/vim-bundle-sparkup'
 
+" Vim plugin for ack
+" cpan install App::Ack
+Bundle 'mileszs/ack.vim'
+
+" Execute command on each file in quickfix list
+Bundle 'nelstrom/vim-qargs'
+
+" Better indentation tool for bash scripts
+Bundle 'vim-scripts/Super-Shell-Indent'
