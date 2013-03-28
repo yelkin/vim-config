@@ -28,6 +28,7 @@ set ignorecase
 set incsearch
 set smartcase
 set hlsearch        " Highlight all search matches
+set gdefault        " Apply substitutions globally on lines
 
 set autoindent
 set cindent
@@ -57,10 +58,10 @@ set scrolljump=7
 set novisualbell        " выключаем бибиканье и мигание
 set t_vb=
 set wildmenu
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
 
-" Keyboard
-so ~/.vim/hotkeys.vim
+
 
 " Encoding
 set encoding=utf-8
@@ -70,30 +71,160 @@ set fileencodings=utf-8,cp1251,koi8-r
 " Set text width to wrap text with 'gq'
 set textwidth=120
 
+" =======================
+" Vundle plugins config
+" =======================
 "Load Vundle
-so ~/.vim/vundle.config.vim
+filetype on             " fix for $? == 1
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Full path fuzzy file, buffer and MRU file finder for Vim
+"   Usage: <c-p> or run :CtrlP
+"   Homepage: https://github.com/kien/ctrlp.vim
+Bundle 'kien/ctrlp.vim'
+
+"   Usage: it is triggered when you type "</"
+"   Homapage: https://github.com/docunext/closetag.vim
+Bundle 'docunext/closetag.vim'
+
+" NERDTree file browser for vim
+Bundle 'scrooloose/nerdtree'
+
+" Better plugin for commenting
+Bundle 'vim-scripts/tComment'
+
+" Extend matching for '%' to words(if/fi), tags, etc
+Bundle 'matchit.zip'
+
+" Matchit for python
+Bundle 'voithos/vim-python-matchit'
+
+" Browse tags in source file in a window
+" Bundle 'taglist.vim'
+" Significantly slows down vim when browsing large file
+Bundle 'vim-scripts/Tagbar'
+
+" Snippets plugin for vim
+Bundle 'snipMate'
+
+" Enclose selection in quotes or brackets
+Bundle 'tpope/vim-surround'
+
+" Fugitive provides git integration for vim
+Bundle 'tpope/vim-fugitive'
+
+" Mappings for working with quickfix list
+Bundle 'tpope/vim-unimpaired'
+
+" Install lucius color scheme
+Bundle 'vim-scripts/Lucius'
+
+" Fancy statusline plugin
+Bundle 'Lokaltog/vim-powerline'
+
+" Use letter shortcuts along with [count] in motions
+" Usage: <leader><leader>{motion}{letter}
+"       instead of [count]{motion}
+Bundle 'Lokaltog/vim-easymotion'
+
+" Syntastic is a syntax checking plugin that runs files through external syntax checkers and displays any resulting
+" errors to the user. 
+" Bundle 'scrooloose/syntastic'
+
+" Use <c-w>o to zoom in and out of window
+" Bundle 'vim-scripts/ZoomWin'
+
+" Gundo.vim is a plugin to visualize your Vim undo tree
+Bundle 'sjl/gundo.vim'
+
+" Vim plugin for ack
+" cpan install App::Ack
+Bundle 'mileszs/ack.vim'
+
+" Execute command on each file in quickfix list
+" Bundle 'nelstrom/vim-qargs'
+
+" Better indentation tool for bash scripts
+Bundle 'vim-scripts/Super-Shell-Indent'
 
 filetype plugin indent on
 
-" Plugins init
-so $VIMRUNTIME/macros/matchit.vim " Extend % functions by matching not only brackets
-                                  " but the whole words, e.g. if/fi
 
 " Set color scheme 
 set t_Co=256
 colo lucius
 LuciusDark
 
-let delimitMate_expand_cr = 1
+" let delimitMate_expand_cr = 1
 set backspace=indent,eol,start
 
+" My functions
+" modify selected text using combining diacritics
+function! s:CombineSelection(line1, line2, cp)
+  execute 'let char = "\u'.a:cp.'"'
+  execute a:line1.','.a:line2.'s/\%V[^[:cntrl:]]/&'.char.'/ge'
+endfunction
 
-"map <C-l> <C-w>l
-"map <C-h> <C-w>h
-"map <C-j> <C-w>j
-"map <C-k> <C-w>k
+command! -range -nargs=0 Overline        call s:CombineSelection(<line1>, <line2>, '0305')
+command! -range -nargs=0 Underline       call s:CombineSelection(<line1>, <line2>, '0332')
+command! -range -nargs=0 DoubleUnderline call s:CombineSelection(<line1>, <line2>, '0333')
+command! -range -nargs=0 Strikethrough   call s:CombineSelection(<line1>, <line2>, '0336')
 
-map <C-a> :%s/\s\+$//g<CR>
+" ================
+" HOTKEYS
+" ================
+
+" Disable annoying features
+
+" Disable help window
+inoremap <F1> <Nop>
+nnoremap <F1> <Nop>
+vnoremap <F1> <Nop>
+
+" Disable Ex mode
+map Q <Nop>
+" Disable K looking stuff up
+map K <Nop>
+
+
+" Toggle vim undo tree browser
+map <F1> :GundoToggle<CR>
+" Toggle file browser
+map <F2> :NERDTreeToggle<CR>
+" Toggle tag browser
+map <F3> :TagbarToggle<CR>
+
+
+" Mappings for common typos in commands:
+command Q q
+command W w
+command WQ wq
+command Wq wq
+
+let mapleader = ","
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>ll :set list!<CR>
+" tComment settings: Bind comment command to <leader>c
+map <leader>cc <c-_><c-_>
+
+map <leader>co "+y
+map <leader>pa "+p
+map <leader>ca gg"+yG
+map <leader>rc :e ~/.vimrc<CR>
+map <leader>vu :e ~/.vim/vundle.config.vim<CR>
+map <leader>gs :Gstatus<CR>
+map <leader>le <esc>:let @/=""<cr>
+map <leader>vv <c-w>v<c-w>l
+
+" nnoremap <tab> %
+" vnoremap <tab> %
 
 map —ë `
 map –π q
@@ -230,4 +361,3 @@ map Ю >
 
 
 
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
