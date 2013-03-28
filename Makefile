@@ -9,7 +9,7 @@ install:
 	#rm -rf $(HOME)/.vim
 	[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	# Install my vim config and my vundle config
-	cp -r .vimrc .vim $(HOME)
+	cp -r .vimrc $(HOME)
 	# Install bundles
 	vim +BundleInstall
 	@echo "New vim config installed successfully"
