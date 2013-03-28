@@ -165,6 +165,19 @@ LuciusDark
 set backspace=indent,eol,start
 
 " My functions
+
+" Cut trailing spaces on write
+autocmd BufWritePre *.py :%s/\s\+$//e
+
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python,sh,spec autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
 " modify selected text using combining diacritics
 function! s:CombineSelection(line1, line2, cp)
   execute 'let char = "\u'.a:cp.'"'
