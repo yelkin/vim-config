@@ -87,7 +87,11 @@ Bundle 'gmarik/vundle'
 " Full path fuzzy file, buffer and MRU file finder for Vim
 "   Usage: <c-p> or run :CtrlP
 "   Homepage: https://github.com/kien/ctrlp.vim
-Bundle 'kien/ctrlp.vim'
+" Bundle 'kien/ctrlp.vim'
+
+" CtrlP alternative
+Bundle 'vim-scripts/L9'
+Bundle 'vim-scripts/FuzzyFinder'
 
 "   Usage: it is triggered when you type "</"
 "   Homapage: https://github.com/docunext/closetag.vim
@@ -238,6 +242,8 @@ map <leader>vv <c-w>v<c-w>l
 
 " nnoremap <tab> %
 " vnoremap <tab> %
+
+nmap <C-P> :FufFile<CR>
 
 map —ë `
 map –π q
