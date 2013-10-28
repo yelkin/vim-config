@@ -87,11 +87,11 @@ Bundle 'gmarik/vundle'
 " Full path fuzzy file, buffer and MRU file finder for Vim
 "   Usage: <c-p> or run :CtrlP
 "   Homepage: https://github.com/kien/ctrlp.vim
-" Bundle 'kien/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 
-" CtrlP alternative
-Bundle 'vim-scripts/L9'
-Bundle 'vim-scripts/FuzzyFinder'
+" CtrlP alternative 
+" Bundle 'vim-scripts/L9'
+" Bundle 'vim-scripts/FuzzyFinder'
 
 "   Usage: it is triggered when you type "</"
 "   Homapage: https://github.com/docunext/closetag.vim
@@ -157,6 +157,26 @@ Bundle 'mileszs/ack.vim'
 " Better indentation tool for bash scripts
 Bundle 'vim-scripts/Super-Shell-Indent'
 
+" ----------------
+" Database plugins
+" ----------------
+" Bundle 'vim-scripts/dbext.vim'
+" " dbext default configuration
+" let g:dbext_default_type = 'FIREBIRD'
+" let g:dbext_default_profile_Firebird = 'type=FIREBIRD:user=sysdba:passwd=servicem:host=10.80.159.4:dbname=/var/db/ics_main.gdb'
+" 
+" Bundle 'vim-scripts/Align'
+" Bundle 'vim-scripts/SQLUtilities'
+
+
+" Edit part of the file in a separate buffer
+Bundle 'chrisbra/NrrwRgn'
+
+" autocompletion
+Bundle 'davidhalter/jedi-vim'
+
+
+
 filetype plugin indent on
 
 
@@ -216,6 +236,9 @@ map <F1> :GundoToggle<CR>
 map <F2> :NERDTreeToggle<CR>
 " Toggle tag browser
 map <F3> :TagbarToggle<CR>
+
+map <F5> :mksession! ~/.vim-session<CR>
+map <F7> :so ~/.vim-session<CR>
 
 
 " Mappings for common typos in commands:
