@@ -69,7 +69,8 @@ set termencoding=utf-8
 set fileencodings=utf-8,cp1251,koi8-r
 
 " Set text width to wrap text with 'gq'
-set textwidth=120
+set textwidth=180
+autocmd bufreadpre *.rst setlocal textwidth=80
 
 " =======================
 " Vundle plugins config
@@ -82,100 +83,68 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" Full path fuzzy file, buffer and MRU file finder for Vim
-"   Usage: <c-p> or run :CtrlP
-"   Homepage: https://github.com/kien/ctrlp.vim
-Bundle 'kien/ctrlp.vim'
-
-" CtrlP alternative 
-" Bundle 'vim-scripts/L9'
-" Bundle 'vim-scripts/FuzzyFinder'
+Plugin 'wincent/command-t'
+nmap <C-p> :CommandT<CR>
 
 "   Usage: it is triggered when you type "</"
 "   Homapage: https://github.com/docunext/closetag.vim
-Bundle 'docunext/closetag.vim'
+Plugin 'docunext/closetag.vim'
 
 " NERDTree file browser for vim
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " Better plugin for commenting
-Bundle 'vim-scripts/tComment'
+Plugin 'vim-scripts/tComment'
 
 " Extend matching for '%' to words(if/fi), tags, etc
-Bundle 'matchit.zip'
+Plugin 'matchit.zip'
 
 " Matchit for python
-Bundle 'voithos/vim-python-matchit'
+Plugin 'voithos/vim-python-matchit'
 
 " Browse tags in source file in a window
 " Bundle 'taglist.vim'
 " Significantly slows down vim when browsing large file
-Bundle 'vim-scripts/Tagbar'
+Plugin 'vim-scripts/Tagbar'
 
 " Snippets plugin for vim
-Bundle 'snipMate'
+"Bundle 'snipMate'
 
 " Enclose selection in quotes or brackets
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 " Fugitive provides git integration for vim
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " Mappings for working with quickfix list
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 
 " Install lucius color scheme
-Bundle 'vim-scripts/Lucius'
+Plugin 'vim-scripts/Lucius'
 
 " Fancy statusline plugin
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-powerline'
 
 " Use letter shortcuts along with [count] in motions
 " Usage: <leader><leader>{motion}{letter}
 "       instead of [count]{motion}
-Bundle 'Lokaltog/vim-easymotion'
-
-" Syntastic is a syntax checking plugin that runs files through external syntax checkers and displays any resulting
-" errors to the user. 
-" Bundle 'scrooloose/syntastic'
-
-" Use <c-w>o to zoom in and out of window
-" Bundle 'vim-scripts/ZoomWin'
-
-" Gundo.vim is a plugin to visualize your Vim undo tree
-Bundle 'sjl/gundo.vim'
-
-" Vim plugin for ack
-" cpan install App::Ack
-Bundle 'mileszs/ack.vim'
-
-" Execute command on each file in quickfix list
-" Bundle 'nelstrom/vim-qargs'
+"Bundle 'Lokaltog/vim-easymotion'
 
 " Better indentation tool for bash scripts
-Bundle 'vim-scripts/Super-Shell-Indent'
+Plugin 'vim-scripts/Super-Shell-Indent'
 
-" ----------------
-" Database plugins
-" ----------------
-" Bundle 'vim-scripts/dbext.vim'
-" " dbext default configuration
-" let g:dbext_default_type = 'FIREBIRD'
-" let g:dbext_default_profile_Firebird = 'type=FIREBIRD:user=sysdba:passwd=servicem:host=10.80.159.4:dbname=/var/db/ics_main.gdb'
-" 
-" Bundle 'vim-scripts/Align'
-" Bundle 'vim-scripts/SQLUtilities'
+" Support ansible's dialect of YAML
+Plugin 'chase/vim-ansible-yaml'
 
+" ReSructuredText plugin
+Plugin 'Rykka/riv.vim'
 
-" Edit part of the file in a separate buffer
-Bundle 'chrisbra/NrrwRgn'
+" Pep8 indentation for python
+Plugin 'hynek/vim-python-pep8-indent'
 
-" autocompletion
-Bundle 'davidhalter/jedi-vim'
-
-
+let NERDTreeIgnore = ['\.pyc$']
 
 filetype plugin indent on
 
@@ -200,7 +169,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-autocmd FileType c,cpp,java,php,ruby,python,sh,spec autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,php,ruby,python,sh,spec,rst autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " modify selected text using combining diacritics
 function! s:CombineSelection(line1, line2, cp)
@@ -208,10 +177,10 @@ function! s:CombineSelection(line1, line2, cp)
   execute a:line1.','.a:line2.'s/\%V[^[:cntrl:]]/&'.char.'/ge'
 endfunction
 
-command! -range -nargs=0 Overline        call s:CombineSelection(<line1>, <line2>, '0305')
-command! -range -nargs=0 Underline       call s:CombineSelection(<line1>, <line2>, '0332')
-command! -range -nargs=0 DoubleUnderline call s:CombineSelection(<line1>, <line2>, '0333')
-command! -range -nargs=0 Strikethrough   call s:CombineSelection(<line1>, <line2>, '0336')
+" command! -range -nargs=0 Overline        call s:CombineSelection(<line1>, <line2>, '0305')
+" command! -range -nargs=0 Underline       call s:CombineSelection(<line1>, <line2>, '0332')
+" command! -range -nargs=0 DoubleUnderline call s:CombineSelection(<line1>, <line2>, '0333')
+" command! -range -nargs=0 Strikethrough   call s:CombineSelection(<line1>, <line2>, '0336')
 
 " ================
 " HOTKEYS
@@ -227,18 +196,13 @@ vnoremap <F1> <Nop>
 " Disable Ex mode
 map Q <Nop>
 " Disable K looking stuff up
-map K <Nop>
+"map K <Nop>
 
 
-" Toggle vim undo tree browser
-map <F1> :GundoToggle<CR>
 " Toggle file browser
 map <F2> :NERDTreeToggle<CR>
 " Toggle tag browser
 map <F3> :TagbarToggle<CR>
-
-map <F5> :mksession! ~/.vim-session<CR>
-map <F7> :so ~/.vim-session<CR>
 
 
 " Mappings for common typos in commands:
@@ -256,17 +220,8 @@ map <leader>cc <c-_><c-_>
 
 map <leader>co "+y
 map <leader>pa "+p
-map <leader>ca gg"+yG
-map <leader>rc :e ~/.vimrc<CR>
-map <leader>vu :e ~/.vim/vundle.config.vim<CR>
-map <leader>gs :Gstatus<CR>
 map <leader>le <esc>:let @/=""<cr>
-map <leader>vv <c-w>v<c-w>l
 
-" nnoremap <tab> %
-" vnoremap <tab> %
-
-nmap <C-P> :FufFile<CR>
 
 map —ë `
 map –π q
